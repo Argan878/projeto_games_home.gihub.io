@@ -1,0 +1,700 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body{
+    height: 200%;
+    width: 100%;
+    background-color: black;
+    font-family: sans-serif;
+    position: relative;
+}
+
+a{
+    text-decoration: none;
+}
+
+
+.areaPesquisa{
+    display: flex;
+    padding: 5px;
+    margin: 5px;
+    margin-left: 100px;
+}
+
+.areaPesquisa a{
+    margin-left: 15px;
+    text-decoration: none;
+    
+}
+
+
+
+
+.conteine1{
+    
+    width: 1470PX;
+    height: 600PX;
+    margin: 0 auto;
+    margin-top: 40px;
+    display: flex;
+    padding: 15px;
+    align-items: center;
+
+}
+
+.conteine1 a{
+
+    border-radius: 10px;
+    width: 100%;
+    height: 100%;
+    padding: 16px 0;
+    font-size: 16px;
+    margin-left: 20px;
+      
+}
+
+.parti1{
+    background-image: url("../img/destaque/Spiderman2.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    box-shadow: 0 8px 16px 0 rgba(219, 100, 100, 0.518), 0 6px 20px 0 rgba(227, 19, 19, 0.345);
+    height: 345px;
+    width: 100%;
+}
+
+
+.forma{
+    width: 35%;
+    margin-top: -10px;
+    margin-left: 10px;
+}
+
+.forma div{
+    border-radius: 10px;
+    display: flex;
+    height: 130px;
+    margin-top: 10px;
+    margin-left: 10px;
+}
+
+/* EDIT PH 25.12 JOGOS DESTAQUES */
+.forma div a .img2{
+    background-image: url("../img/destaque/detroid.jpg.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+    margin-right: 10px;
+    padding: 4px;
+    margin-top: -4px;
+    width: 110px;
+    height: 100px;
+    border: 1px solid black;
+}
+
+.forma div a .img3{
+    background-image: url("../img/destaque/GTAVI.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    margin-right: 10px;
+    padding: 4px;
+    margin-top: -4px;
+    width: 110px;
+    height: 100px;
+    border: 1px solid black;
+}
+
+.forma div a .img4{
+    background-image: url("../img/destaque/Red_Dead_Redemption_2.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+    margin-right: 10px;
+    padding: 4px;
+    margin-top: -4px;
+    width: 110px;
+    height: 100px;
+    border: 1px solid black;
+}
+
+.forma div a .img5{
+    background-image: url("../img/destaque/Resident_Evil_4.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    margin-right: 10px;
+    padding: 4px;
+    margin-top: -4px;
+    width: 110px;
+    height: 100px;
+    border: 1px solid black;
+}
+
+/* FINAL DO EDIT */
+
+.forma div a{
+    color: rgb(255, 255, 255);
+    text-align: center;
+    display: flex;
+   
+    
+}
+
+.forma div a p{
+    margin-top: 20px;
+
+}
+
+.forma a:hover{
+    background-color: rgb(99, 99, 107);
+    transition: 0.5s;
+    cursor: pointer;
+    
+}
+
+
+/* \/\/\/ Uma parte da responsividade \/\/\/ */
+
+
+@media screen and (max-width: 1470PX){
+    .conteine1{
+        width: 95%;
+        height: 500PX;
+        margin: auto;
+        margin-top: 80px;
+        display: flex;
+        padding: 18px;
+        align-items: center;
+    }
+    .conteine1 a{
+        border-radius: 10px;
+        width: 100%;
+        height: 100%;
+        padding: 18px 0;
+        font-size: 30px;
+        margin-left: 20px;   
+        
+    }
+
+    .parti1{
+        background-image: url("../img/destaque/Spiderman2.jpg");
+        background-repeat: no-repeat;
+        background-size: 100% 100%;
+        box-shadow: 0 8px 16px 0 rgba(219, 100, 100, 0.518), 0 6px 20px 0 rgba(227, 19, 19, 0.345);
+        height: 345px;
+        width: 100%;
+    }
+    .forma{
+        
+        width: 30%;
+        margin-top: -15px;
+        margin-left: 10px;
+    }
+    .forma div{
+        display: flex;
+        height: 90px;
+        margin-top: 10px;
+    }
+    
+    .forma div a .img2{
+        background-image: url("../img/destaque/detroid.jpg.png");
+        background-repeat: no-repeat;
+        background-size: cover;
+        margin-right: 8px;
+        padding: 4px;
+        margin-top: -7px;
+        width: 70px;
+        height: 65px;
+        border: 1px solid black;
+    }
+    .forma div a .img3{
+        background-image: url("../img/destaque/GTAVI.jpg");
+        background-repeat: no-repeat;
+        background-size: cover;
+        margin-right: 8px;
+        padding: 4px;
+        margin-top: -7px;
+        width: 70px;
+        height: 65px;
+        border: 1px solid black;
+    }
+    .forma div a .img4{
+        background-image: url("../img/destaque/Red_Dead_Redemption_2.png");
+        background-repeat: no-repeat;
+        background-size: cover;
+        margin-right: 8px;
+        padding: 4px;
+        margin-top: -7px;
+        width: 70px;
+        height: 65px;
+        border: 1px solid black;
+    }
+    .forma div a .img5{
+        background-image: url("../img/destaque/Resident_Evil_4.jpg");
+        background-repeat: no-repeat;
+        background-size: cover;
+        margin-right: 8px;
+        padding: 4px;
+        margin-top: -7px;
+        width: 70px;
+        height: 65px;
+        border: 1px solid black;
+
+        
+    }
+
+
+    .animation-letras{
+        white-space: nowrap;
+        animation: slideText 10s linear infinite;
+    }
+    
+
+    .limite{
+        width: 140px;
+        overflow: hidden;
+    }
+      
+      @keyframes slideText {
+        from {
+          transform: translateX(100%);
+        }
+        to {
+          transform: translateX(-100%);
+        }
+      }
+    
+    .forma div a{
+        
+        color: rgb(255, 255, 255);
+        display: flex;
+        
+    }
+    .forma div a p{
+        margin-top: 10px;
+        font-size: 19px;
+    
+    }
+    
+
+
+    }
+
+
+@media screen and (max-width: 700px){
+    .conteine1{
+        width: 100%;
+        height: 500PX;
+        margin: 0 auto;
+        margin-top: 80px;
+        display: flex;
+        flex-direction: column;
+        padding: 15px 15px 15px;
+        align-items: center;
+    }
+    .parti1{
+        background-image: url("../img/destaque/Spiderman2.jpg");
+        background-repeat: no-repeat;
+        background-size: 100% 100%;
+        box-shadow: 0 8px 16px 0 rgba(219, 100, 100, 0.518), 0 6px 20px 0 rgba(227, 19, 19, 0.345);
+        margin-right: 10px;
+        height: 345px;
+        width: 100%;
+    }
+    .forma{
+        
+        width: 100%;
+        height: 220px;
+        display: flex;
+        margin-top: 20px;
+        overflow-x: auto;
+        scroll-snap-type: x mandatory;
+        margin-left: 16px;
+        justify-content: flex-start; /* Ajuste para garantir que o conteúdo comece no início */
+        padding-bottom: 25px; /* Adicionando um espaço para o scrollbar quando necessário */
+    }
+
+}  
+/* /\/\/\/\ Uma parte da responsividade do destaque /\/\/\/\ */
+
+
+
+
+    /*\/\/\/ Area de Jogos aleatorios \/\/\/*/
+    .Titulo_aba{
+        font-family: monospace;
+        margin-top: 70px;
+        color: white;
+        padding: 15px;
+        margin-left: 190px;
+    }
+
+    .Titulo_aba:hover{
+        background-color: red;
+        transition: 0.6s;
+        cursor: pointer;
+        border-radius: 25px;
+        display: inline-block;
+    }
+
+    
+    .jogoaleatorio {
+        display: flex;
+        overflow-x: auto;
+        scroll-snap-type: x mandatory;
+        margin-top: 10px;
+        justify-content: center;
+        border: 3px solid white;
+    }
+
+    h3 {
+        color: aliceblue;
+        margin: 10px 0;
+    }
+    .jogos {
+        flex: 0 0 auto;
+        margin-right: 35px;
+        scroll-snap-align: start;
+        cursor: pointer;
+        text-align: center; 
+    }
+
+    .jogos:hover {
+        background-color: rgba(204, 187, 187, 0.308);
+        transition: 0.6s;
+        cursor: pointer;
+    }
+
+    
+    .img_jogos {
+        width: 340px; 
+        max-width: 340px; 
+        height: 300px;
+        object-fit: cover; 
+        border-radius: 8px;
+        border: 2px solid white;
+    }
+    
+    .jogos,h3, a{
+        color: aliceblue;
+        text-decoration: none;
+    }
+
+    .preço {
+        color: white;
+        background-color: rgb(80, 78, 78);
+        border-radius: 20px;
+        display: inline-block;
+        padding: 5px;
+    }
+
+    .Comprar{
+        color: rgb(255, 255, 255);
+        background-color: rgb(255, 0, 0);
+        transition: 0.8s;
+        cursor: pointer;
+        border-radius: 20px;
+        padding: 5px; 
+        display: inline-block;
+    }
+    /* /\/\/\Jogos aleatorios /\/\/\ */
+
+
+
+    /*Gratuitos */  
+    .gamesfree {
+        display: flex;
+        overflow-x: auto;
+        scroll-snap-type: x mandatory;
+        margin-top: 10px;
+        justify-content: center;
+    }
+    
+    .jogosgratis {
+        flex: 0 0 auto;
+        margin-right: 35px;
+        scroll-snap-align: start;
+        cursor: pointer;
+        text-align: center;
+    }
+
+    
+    /*aq é onde faz o nome dos jogos gratis crescer - FONT-SIZE: 20px, caso queira tirar*/
+    .jogosgratis:hover {
+        background-color: rgba(204, 187, 187, 0.308);
+        transition: 0.6s;
+        cursor: pointer;
+        border-radius: 15px;
+    }
+    
+    .jogosgratis img {
+        width: 100%;
+        max-width: 340px;
+        height: auto;
+        border-radius: 8px;
+    }
+
+    .baixar{
+        color: rgb(255, 255, 255);
+        padding: 5px;
+        
+    }
+
+    .baixar:hover{
+        color: rgb(255, 255, 255);
+        background-color: rgb(255, 0, 0);
+        transition: 0.8s;
+        cursor: pointer;
+        border-radius: 20px;
+        padding: 5px;
+        display: inline-block;
+
+    }
+
+
+
+
+/* O maior destaque de cada plataforma */
+
+.plataforma {
+    display: flex;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    margin-top: 10px;
+    justify-content: center;
+}
+
+.maiorDes {
+    
+    flex: 0 0 auto;
+    margin-right: 35px;
+    scroll-snap-align: start;
+    cursor: pointer;
+    text-align: center; 
+}
+
+.maiorDes:hover {
+    background-color: rgba(204, 187, 187, 0.308);
+    transition: 0.6s;
+    cursor: pointer;
+}
+
+
+.maiorDes,img {
+    width: 135%; 
+    max-width: 340px; 
+    height: auto; 
+    border-radius: 8px;
+}
+.disply{
+    display: flex;
+    margin: auto;
+    width: 60%;
+    text-align: center;
+    padding: 3px;
+}
+.disply h3{
+    margin: auto;
+}
+
+.nomePlatafor{
+    background-color:  rgb(255, 0, 0);
+    border-radius: 20px;
+    padding: 7px;
+}
+
+/* \/\/\/ Responsividade da area dos jogos e do scroll \/\/\/ */
+
+@media screen and (max-width: 1500px){
+    .jogoaleatorio {
+        display: flex;
+        overflow-x: auto;
+        scroll-snap-type: x mandatory;
+        margin-top: 10px;
+        margin-left: 16px;
+        justify-content: flex-start; /* Ajuste para garantir que o conteúdo comece no início */
+        padding-bottom: 16px; /* Adicionando um espaço para o scrollbar quando necessário */
+    }
+    
+    .jogos {
+        
+        flex: 0 0 auto;
+        margin-right: 35px;
+        scroll-snap-align: start;
+        cursor: pointer;
+        text-align: center; 
+    }
+
+    .jogos:hover {
+        background-color: rgba(204, 187, 187, 0.308);
+        transition: 0.6s;
+        cursor: pointer;
+    }
+    .Titulo_aba{
+        font-family: monospace;
+        margin-top: 70px;
+        color: white;
+        padding: 15px;
+        margin-left: 90px;
+    }
+
+    .Titulo_aba:hover{
+        background-color: red;
+        transition: 0.6s;
+        cursor: pointer;
+        border-radius: 25px;
+        display: inline-block;
+    }
+    
+
+    
+    .jogos,img {
+        width: 135%; 
+        max-width: 340px; 
+        height: auto; 
+        border-radius: 8px;
+    }
+
+    .Comprar{
+        color: rgb(255, 255, 255);
+        background-color: rgb(255, 0, 0);
+        transition: 0.8s;
+        cursor: pointer;
+        border-radius: 20px;
+        padding: 5px; 
+        display: inline-block;
+    }
+
+
+
+    /*Gratuitos */  
+    .gamesfree {
+        display: flex;
+        overflow-x: auto;
+        scroll-snap-type: x mandatory;
+        margin-top: 10px;
+        margin-left: 16px;
+        justify-content: flex-start; /* Ajuste para garantir que o conteúdo comece no início */
+        padding-bottom: 16px; /* Adicionando um espaço para o scrollbar quando necessário */
+    }
+    
+    .jogosgratis {
+        flex: 0 0 auto;
+        margin-right: 35px;
+        scroll-snap-align: start;
+        cursor: pointer;
+        text-align: center;
+    }
+    
+    /*aq é onde faz o nome dos jogos gratis crescer - FONT-SIZE: 20px, caso queira tirar*/
+    .jogosgratis:hover {
+        background-color: rgba(204, 187, 187, 0.308);
+        transition: 0.6s;
+        cursor: pointer;
+        border-radius: 15px;
+    }
+    
+    .jogosgratis img {
+        width: 100%;
+        max-width: 340px;
+        height: auto;
+        border-radius: 8px;
+    }
+
+    .baixar{
+        color: rgb(255, 255, 255);
+        padding: 3px;
+        
+    }
+
+    .baixar:hover{
+        color: rgb(255, 255, 255);
+        background-color: rgb(255, 0, 0);
+        transition: 0.8s;
+        cursor: pointer;
+        border-radius: 20px;
+        padding: 3px;
+        display: inline-block;
+
+    }
+
+/* O maior destaque de cada plataforma */
+
+.plataforma {
+    display: flex;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    margin-top: 10px;
+    margin-left: 16px;
+    justify-content: flex-start; /* Ajuste para garantir que o conteúdo comece no início */
+    padding-bottom: 16px; /* Adicionando um espaço para o scrollbar quando necessário */
+}
+
+.maiorDes {
+    
+    flex: 0 0 auto;
+    margin-right: 35px;
+    scroll-snap-align: start;
+    cursor: pointer;
+    text-align: center; 
+}
+
+.maiorDes:hover {
+    background-color: rgba(204, 187, 187, 0.308);
+    transition: 0.6s;
+    cursor: pointer;
+}
+
+
+.maiorDes,img {
+    width: 135%; 
+    max-width: 340px; 
+    height: auto; 
+    border-radius: 8px;
+}
+.disply{
+    display: flex;
+    margin: auto;
+    width: 60%;
+    text-align: center;
+    padding: 3px;
+}
+.disply h3{
+    margin: auto;
+}
+
+.nomePlatafor{
+    background-color:  rgb(255, 0, 0);
+    border-radius: 20px;
+    padding: 7px;
+}
+
+}
+
+@media screen and (max-width: 800px){
+    .promocoes{
+        font-family: monospace;
+        margin-top: 70px;
+        color: white;
+        padding: 15px;
+        margin-left: 20px;
+    }
+    .animated {
+        white-space: nowrap;
+        animation: slideText 10s linear infinite;
+      }
+      
+      @keyframes slideText {
+        from {
+          transform: translateX(100%);
+        }
+        to {
+          transform: translateX(-100%);
+        }
+      }
+    .delimitar{
+        width: 230px;
+        overflow: hidden;
+    }
+}
+
+/* /\/\/\ Responsividade da area dos jogos e do scroll /\/\/\ */

@@ -1,0 +1,60 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Home</title>
+    <link rel="stylesheet" href="{% static 'css/home.css' %}">
+</head>
+<body>
+    {% include 'header.html' %}
+
+    <!-- Area dos destaques-->
+    <section class="conteine1">
+        <a href="" class="parti1"></a>
+        <samp class="forma">
+        <div class="parti2">
+            <a href=""><div class="img2"></div>
+                <div class="limite"><p class="animation-letras">Detroid Become Human</p></div>
+            </a>
+        </div>
+        <div class="parti3">
+            <a href=""><div class="img3"></div> <div class="limite"><p class="animation-letras">Grand Theft Auto VI</p></div></a>
+        </div>
+        <div class="parti4">
+            <a href=""><div class="img4"></div><div  class="limite"><p class="animation-letras" >Red Dead Redemption II</p></div></a>
+        </div>
+        <div class="parti5">
+            <a href=""><div class="img5"></div><div class="limite"><p class="animation-letras">Resident Evil 4</p></div></a>
+        </div>
+        </samp>
+    </section>
+    <h1 style="color: aliceblue;">Bem-vindo ao Home</h1>
+
+    <div class="Titulo_aba">
+        <h2>Jogos em Destaque >>></h2>
+    </div>
+    <ul>
+        <div class="jogoaleatorio">
+            {% for game in games %}
+            <div class="jogos">
+                {% if game.image %}
+                        <img class="img_jogos" src="{{ game.image.url }}" alt="Imagem do Jogo" width="200">
+                {% endif %}
+                <h3><a href="{% url 'game_detail' game.pk %}">{{ game.name }}</a></h3>
+                <p class="preço">Preço: R$ {{ game.price }}</p>
+                <p class="Comprar"><a href="{% url 'game_detail' game.pk %}">Comprar</a></p>
+            </div>
+            {% endfor %}
+        </div>
+        
+    </ul>
+
+    <br/>
+    <h2><a href="{% url 'game_list' %}" style="color: aliceblue;">Listar todos os Jogos</a></h2>
+    
+
+    
+           
+    {% include 'footer.html' %}
+</body>
+</html>

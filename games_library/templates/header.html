@@ -1,0 +1,120 @@
+<!-- header.html -->
+{% load static %}
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Game Home</title>
+    <link rel="icon" href="{% static 'img/logoIco.ico' %}" type="image/x-icon">
+    <link rel="stylesheet" href="{% static 'CSS/header.css' %}">
+    <script src="https://kit.fontawesome.com/4cd770d9d0.js" crossorigin="anonymous"></script> 
+    <script src="{% static 'js/script.js' %}"></script>
+</head>
+<body>
+    <header>
+        <div class="juntosMbMp">
+            <div class="menuBaixo">
+            <input type="checkbox" id="chec">
+                <label for="chec">
+                     <img src="{% static 'img/logo.png' %}" alt="" id="objeto1" class="objeto" onclick="animarObjeto1()">
+                     <div id="objeto2" class="objeto" onclick="animarObjeto2()"><i  class="fa-solid fa-chevron-down" style="color: #e8e8e8; font-size: 27px;"></i> <div></div> </div>
+                 </label>
+                 
+                
+                 <nav>
+                    <ul>
+                        <h6>Destaques</h6>
+                        <li>
+                            <a href="">Jogos recém lançados</a>
+                        </li>
+                        
+                        <li>
+                            <a href="">Famosos da semana</a>
+                        </li>
+                        
+                        <li>
+                            <a href="">Melhor preço</a>
+                        </li>
+                        <li>
+                            <a href="">Promoção</a>
+                        </li>
+                    </ul>
+                    <ul>
+                        <h6>Navegação especializada</h6>
+                        <li>
+                            <a href="">Gênero</a>
+                        </li>
+                        
+                        <li>
+                            <a href="">Plataforma</a>
+                        </li>
+                        
+                        <li>
+                            <a href="">Data de lançamento</a>
+                        </li>
+                    </ul>
+                    <ul>
+                        <h6>Ajuda e configurações</h6>
+                        <li>
+                            <a href="pag_usuario.html">Informações da conta</a>
+                        </li>
+                        <li>
+                            <a href="">Suporte</a>
+                        </li>
+                        
+                        <li>
+                            <a href="login.html">Fazer seu login</a>
+                        </li>
+                        <li>
+                            <a href="">Sair da conta</a>
+                        </li>
+                    </ul>
+                 </nav>
+            </div>
+
+        <div class="menu-divider"></div>
+        <div class="menuPrimario">
+            <a href="index.html" style="font-weight: bold;">HOME</a>
+            <div class="escoder">
+            <a href="" class="houve1">Favoritos</a>
+            <a href="" class="houve1">Downloads</a>
+            </div>
+        </div>
+    </div>
+
+    <div class="user">
+      <div class="escoder">
+        <span class="areaPesquisa">
+            <div class="pesquisar">
+                <button class="butao_busca"><i class="fa-solid fa-magnifying-glass" style="color: #e9ecf1;"></i></button>
+                <input type="text" class="tira_estilo_input" placeholder="Pesquisar">
+            </div>
+            
+            <a href="" class="houve1">Descobrir</a>
+            <a href="" class="houve1">Navegar</a>
+            </div>
+        </span>
+        <div class="escoder">
+        <a href="pag_usuario.html"><i class="fa-solid fa-circle-user" style="--fa-primary-color: rgb(255, 255, 255); --fa-secondary-color: #000000;"></i></a>
+         </div>
+    </div>
+
+    <!-- Area do modo mobile -->
+    <div class="menu-icon">
+      <button onclick="menuShow()"><img class="icon" src="{% static 'img/menu_white_36dp.svg' %}" alt=""></button>
+    </div>
+    <div class="menu-mobile">
+      <a href="pag_usuario.html"><i class="fa-solid fa-circle-user" style="--fa-primary-color: rgb(255, 255, 255); --fa-secondary-color: #000000;"></i></a>
+        <ul>
+            <li class="nav-item"><a href="" class="houve1">Favoritos</a></li>
+            <li class="nav-item"><a href="" class="houve1">Navegar</a></li>
+            <li class="nav-item"><a href="" class="houve1">Downloads</a></li>
+            <li class="nav-item"><a href="" class="houve1">Descobrir</a></li>
+            <div class="pesquisar">
+                <button class="butao_busca"><i class="fa-solid fa-magnifying-glass" style="color: #e9ecf1;"></i></button>
+                <input type="text" class="tira_estilo_input" placeholder="Pesquisar">
+            </div>
+        </ul>
+    </div>
+</header>
