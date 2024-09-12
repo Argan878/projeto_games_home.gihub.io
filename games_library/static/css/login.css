@@ -1,0 +1,117 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body {
+    height: 300vh;
+    background-color: black;
+    font-family: sans-serif;
+}
+
+a {
+    text-decoration: none;
+}
+
+.informe_contatos {
+    position: relative;
+    top: 110px;
+    max-width: 400px;
+    min-width: 200px;
+    margin: 0 auto;
+    padding: 20px;
+    border: solid rgb(57, 56, 56) 4px;
+    border-radius: 20px;
+    background-color: rgb(57, 56, 56);
+    display: grid;
+    align-items: center;
+    text-align: center;
+}
+
+.logo {
+    width: 80px;
+    height: 75px;
+    margin: auto;
+}
+
+h2 {
+    color: white;
+    margin-top: 20px;
+}
+
+.form-control {
+    padding: 20px;
+    width: 77%;
+    background-color: rgb(57, 56, 56);
+    border: none;
+    outline: none;
+    border: 2px solid white;
+    border-radius: 7px;
+    color: white;
+    margin-bottom: 10px;
+}
+
+.minetx {
+    display: flex;
+    font-size: 12px;
+    color: gray;
+}
+
+.minetx hr {
+    width: 25%;
+    height: 1px;
+    margin: auto;
+    border: 1px solid gray;
+}
+
+.Butao_forme {
+    background-color: green;
+    color: aliceblue;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.Butao_forme:hover {
+    background-color: darkgreen;
+}
+
+.form-error {
+    color: red; /* Define a cor do texto como vermelho */
+    font-size: 0.875em; /* Ajuste o tamanho da fonte conforme necessário */
+    margin-top: 0.25em; /* Espaçamento acima das mensagens de erro */
+}
+ul.errorlist {
+    list-style-type: none; /* Remove as bolinhas da lista */
+    padding: 0; /* Remove o padding padrão */
+    margin: 0; /* Remove a margem padrão */
+    color: red; /* Define a cor do texto como vermelho */
+    font-size: 0.875em; /* Ajuste o tamanho da fonte conforme necessário */
+}
+
+ul.errorlist li {
+    margin-top: 0.25em; /* Espaçamento acima das mensagens de erro */
+}
+
+
+
+ul.errorlist {
+    list-style-type: none; /* Remove as bolinhas da lista */
+    padding: 0; /* Remove o padding padrão */
+    margin: 0; /* Remove a margem padrão */
+    color: red; /* Define a cor do texto como vermelho */
+    font-size: 0.875em; /* Ajuste o tamanho da fonte conforme necessário */
+}
+
+ul.errorlist li {
+    margin-top: 0.25em; /* Espaçamento acima das mensagens de erro */
+}
+
+/* Estiliza as mensagens de erro associadas ao formulário de login */
+ul.errorlist li.error {
+    color: red; /* Define a cor do texto como vermelho para mensagens de erro */
+    padding: 10px; /* Adiciona um padding para melhorar a legibilidade */
+    border-radius: 5px; /* Adiciona bordas arredondadas */
+}

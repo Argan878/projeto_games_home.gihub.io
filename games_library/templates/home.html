@@ -6,8 +6,14 @@
     <link rel="stylesheet" href="{% static 'css/home.css' %}">
 </head>
 <body>
-    {% include 'header.html' %}
-
+    {% include 'Base/header.html' %}
+    {% if messages %}
+    <ul>
+        {% for message in messages %}
+            <li class="{{ message.tags }}" style="color: azure;">{{ message }}</li>
+        {% endfor %}
+    </ul>
+    {% endif %}
     <!-- Area dos destaques-->
     <section class="conteine1">
         <a href="" class="parti1"></a>
@@ -55,6 +61,6 @@
 
     
            
-    {% include 'footer.html' %}
+    {% include 'Base/footer.html' %}
 </body>
 </html>

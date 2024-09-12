@@ -1,0 +1,63 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <link rel="stylesheet" href="{% static 'css/login.css' %}">
+    <!-- Incluímos o CSS personalizado para o formulário de login -->
+</head>
+<body>
+    <!-- Contêiner principal para o formulário de login -->
+    <div class="informe_contatos">
+        <!-- Logo -->
+        <a href="{% url 'home' %}"><img src="{% static 'img/logo.png' %}" alt="Logo" class="logo"></a>
+
+        <!-- Título do formulário de login -->
+        <h2> Login </h2>
+        <br/>
+        <!-- Mensagens de erro ou sucesso -->
+        {% if messages %}
+        <ul class="errorlist">
+            {% for message in messages %}
+                <li {% if message.tags %} class="{{ message.tags }}" {% endif %}>
+                    {{ message }}
+                </li>
+             {% endfor %}
+        </ul>
+        {% endif %}
+
+        <!-- Formulário de login -->
+        <form method="post" action="{% url 'login' %}">
+            {% csrf_token %}
+            
+            <!-- Campo de Nome de Usuário -->
+            <div class="form-group">
+                <input type="text" name="username" maxlength="150" class="form-control" required id="id_username" placeholder="Nome de usuário">
+            </div>
+            
+            <!-- Campo de Senha -->
+            <div class="form-group">
+                <input type="password" name="password" class="form-control" required id="id_password" placeholder="Senha">
+            </div>
+
+            <!-- Botão de login -->
+            <div class="espaco">
+                <button class="Butao_forme" type="submit">Login</button>
+            </div>
+
+
+            <br/>
+
+            <!-- Separador entre o login e outras opções -->
+            <div class="minetx">
+                <hr> <p>ou</p> <hr>
+            </div>
+            <br>
+            <!-- Link para registrar nova conta -->
+            <p><a href="{% url 'cadastro' %}" style="color: aliceblue;">Registrar uma nova conta</a></p>
+        </form>
+    </div>
+</body>
+</html>
