@@ -1,0 +1,130 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: black;
+    font-family: sans-serif;
+}
+
+.container {
+    max-width: 1150px;
+    margin: 25px auto;
+    background-color: rgb(35, 35, 35);
+    padding: 20px;
+    border-radius: 5px;
+    display: flex;
+}
+
+.principal {
+    margin-top: 20px;
+    flex: 1;
+    padding: 20px;
+    text-align: center;
+    background-color: rgb(55, 55, 55);
+    border-radius: 15px;
+}
+
+/* Ajuste para a imagem do perfil */
+.profile-pic {
+    width: 150px;  /* Largura da imagem */
+    height: 150px;  /* Altura da imagem */
+    border-radius: 50%;  /* Torna a imagem circular */
+    object-fit: cover;  /* Garante que a imagem preencha o container sem distorção */
+    border: 2px solid #ccc;  /* Adiciona uma borda leve ao redor da imagem */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);  /* Sombra para dar um efeito de elevação */
+}
+
+.profile-picture-preview {
+    max-width: 150px;
+    max-height: 150px;
+    border-radius: 50%;
+    margin-top: 10px;
+}
+
+/* Estilo adicional para o container da foto */
+.user-profile {
+    display: flex;
+    flex-direction: column;
+    align-items: center;  /* Centraliza a imagem no meio */
+    justify-content: center;
+    margin-top: 20px;
+}
+
+.user-profile h3 {
+    margin-top: 10px;  /* Espaçamento entre a foto e o nome do usuário */
+    font-size: 1.5rem;
+    color: #333;
+}
+
+.nickname {
+    font-size: 22px;
+    margin-bottom: 15px;
+    color: #e1e0e0;
+    text-align: center;
+}
+
+.email {
+    color: #e1e0e0;
+    text-align: center;
+    font-size: 16px;
+}
+
+.menu_lateral ul {
+    margin-top: 10px;
+    list-style-type: none;
+    padding: 0;
+}
+
+.menu_lateral li {
+    margin-top: 15px;
+}
+
+.menu_lateral a {
+    display: block;
+    padding: 5px;
+    margin-top: -2px;
+    font-size: 15px;
+    color: rgb(156, 156, 156);
+}
+
+.menu_lateral a:hover {
+    background-color: rgba(153, 152, 152, 0.473);
+    transition: 0.5s;
+    cursor: pointer;
+    border-radius: 10px;
+    color: #ffffff;
+}
+
+.secundario {
+    flex: 2;
+    padding: 10px;
+    text-align: justify;
+}
+
+.titlesec {
+    color: #e1e0e0;
+    text-align: center;
+    font-size: 20px;
+    padding-bottom: 15px;
+}
+
+.resumo {
+    font-size: 17px;
+    margin-left: 15px;
+    text-align: center;
+    color: rgb(156, 156, 156);
+}
+
+.InfoConta, .DetalhesPessoais, .Endereco {
+    margin-left: 15px;
+    margin-top: 40px;
+    color: rgb(100, 100, 100);
+}
+
+.InfoConta h2, .DetalhesPessoais h2, .Endereco h2 {
+    color: #e1e0e0;
+    padding-bottom: 10px;
+}

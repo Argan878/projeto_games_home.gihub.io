@@ -26,19 +26,85 @@
         {% endif %}
 
         <!-- Formulário de registro -->
-        <form method="post" action="{% url 'cadastro' %}">
+        <form method="post" action="{% url 'cadastro' %}" enctype="multipart/form-data">
             {% csrf_token %}
 
             <!-- Campo de Nome de Usuário -->
             <div class="form-group">
-                <input type="text" name="username" maxlength="150" class="form-control" required id="id_username" placeholder="Nome de usuário">
+                <input type="text" name="username" maxlength="150" class="form-control" required id="id_username" placeholder="Nome de exibição" value="{{ form.username.value|default_if_none:'' }}">
                 <p class="form-error">{{ form.username.errors }}</p> <!-- Exibe erros de validação -->
             </div>
 
             <!-- Campo de Email -->
             <div class="form-group">
-                <input type="email" name="email" class="form-control" required id="id_email" placeholder="Seu email">
+                <input type="email" name="email" class="form-control" required id="id_email" placeholder="Seu email" value="{{ form.email.value|default_if_none:'' }}">
                 <p class="form-error">{{ form.email.errors }}</p> <!-- Exibe erros de validação -->
+            </div>
+
+            <!-- Campo de Primeiro Nome -->
+            <div class="form-group">
+                <input type="text" name="first_name" class="form-control" id="id_first_name" placeholder="Primeiro nome" value="{{ form.first_name.value|default_if_none:'' }}">
+                <p class="form-error">{{ form.first_name.errors }}</p>
+            </div>
+
+            <!-- Campo de Sobrenome -->
+            <div class="form-group">
+                <input type="text" name="last_name" class="form-control" id="id_last_name" placeholder="Sobrenome" value="{{ form.last_name.value|default_if_none:'' }}">
+                <p class="form-error">{{ form.last_name.errors }}</p>
+            </div>
+
+            <!-- Campo de Telefone -->
+            <div class="form-group">
+                <input type="text" name="phone_number" class="form-control" id="id_phone_number" placeholder="Telefone" value="{{ form.phone_number.value|default_if_none:'' }}">
+                <p class="form-error">{{ form.phone_number.errors }}</p>
+            </div>
+
+            <!-- Campo de Endereço -->
+            <div class="form-group">
+                <input type="text" name="address" class="form-control" id="id_address" placeholder="Endereço" value="{{ form.address.value|default_if_none:'' }}">
+                <p class="form-error">{{ form.address.errors }}</p>
+            </div>
+
+            <!-- Campo de Código Postal -->
+            <div class="form-group">
+                <input type="text" name="postal_code" class="form-control" id="id_postal_code" placeholder="Código Postal" value="{{ form.postal_code.value|default_if_none:'' }}">
+                <p class="form-error">{{ form.postal_code.errors }}</p>
+            </div>
+
+            <!-- Campo de Região -->
+            <div class="form-group">
+                <input type="text" name="region" class="form-control" id="id_region" placeholder="Região" value="{{ form.region.value|default_if_none:'' }}">
+                <p class="form-error">{{ form.region.errors }}</p>
+            </div>
+
+            <!-- Campo de Cidade -->
+            <div class="form-group">
+                <input type="text" name="city" class="form-control" id="id_city" placeholder="Cidade" value="{{ form.city.value|default_if_none:'' }}">
+                <p class="form-error">{{ form.city.errors }}</p>
+            </div>
+
+            <!-- Campo de Rua -->
+            <div class="form-group">
+                <input type="text" name="street" class="form-control" id="id_street" placeholder="Rua" value="{{ form.street.value|default_if_none:'' }}">
+                <p class="form-error">{{ form.street.errors }}</p>
+            </div>
+
+            <!-- Campo de Número da Rua -->
+            <div class="form-group">
+                <input type="text" name="street_number" class="form-control" id="id_street_number" placeholder="Número da Rua" value="{{ form.street_number.value|default_if_none:'' }}">
+                <p class="form-error">{{ form.street_number.errors }}</p>
+            </div>
+
+            <!-- Campo de CPF -->
+            <div class="form-group">
+                <input type="text" name="cpf" class="form-control" id="id_cpf" placeholder="CPF" value="{{ form.cpf.value|default_if_none:'' }}">
+                <p class="form-error">{{ form.cpf.errors }}</p>
+            </div>
+
+            <!-- Campo de Foto de Perfil -->
+            <div class="form-group">
+                <input type="file" name="profile_picture" class="form-control" id="id_profile_picture">
+                <p class="form-error">{{ form.profile_picture.errors }}</p>
             </div>
 
             <!-- Campo de Senha -->

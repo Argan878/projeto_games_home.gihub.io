@@ -3,17 +3,86 @@
 <html>
 <head>
     <title>{{ game.name }}</title>
-    <link rel="stylesheet" href="{% static 'css/forma.css' %}">
+    <link rel="stylesheet" href="{% static 'css/detalhe.css' %}">
 </head>
 <body>
-    {% if game.image %}
-        <img src="{{ game.image.url }}" alt="Imagem do Jogo" width="400">
-    {% endif %}
-    <h1>{{ game.name }}</h1>
-    <p>Categoria: {{ game.category }}</p>
-    <p>Preço: R$ {{ game.price }}</p>
-    <p>{{ game.description }}</p>
-    
-    <a href="{% url 'home' %}">Home</a>
+    {% include 'Base/header.html' %}
+    <br/>
+    <div class="game-details">
+        <div class="foco">
+            <!-- Exibir imagem do jogo, se disponível -->
+            {% if game.image %}
+                <img src="{{ game.image.url }}" alt="Imagem do Jogo">
+            {% endif %}
+            <div class="lado">
+                <h1>{{ game.name }}</h1>
+                <p>Categoria: {{ game.category }}</p>
+                <p>Preço: R$ {{ game.price }}</p>
+                <a href="#" class="button">Comprar</a>
+            </div>
+        </div>
+        <div class="descri">
+            <p>{{ game.description }}</p>
+        </div>
+        <!-- Link para a home -->
+        <a href="{% url 'home' %}" class="home-button">Home</a>
+
+        <!-- Seção de Comentários -->
+        <h2>Comentários</h2>
+        <div class="comments">
+            {% for comment in comments %}
+                <div class="comment">
+                    <p><strong>{{ comment.user.username }}</strong> ({{ comment.created_at|date:"d/m/Y H:i" }}):</p>
+                    <p>{{ comment.content }}</p>
+
+                    {% if comment.user == user %}
+                        <!-- Formulário para editar o comentário -->
+                        {% if comment_to_edit and comment_to_edit.id == comment.id %}
+                            <form method="post">
+                                {% csrf_token %}
+                                <input type="hidden" name="comment_id" value="{{ comment.id }}">
+                                {{ comment_form.as_p }}
+                                <button type="submit" name="edit_comment">Salvar</button>
+                                <a href="{% url 'game_detail' game.pk %}" class="button">Cancelar</a>
+                            </form>
+                        {% else %}
+                            <!-- Botões de Editar e Excluir -->
+                            <div class="actions">
+                                <form method="post" style="display:inline;">
+                                    {% csrf_token %}
+                                    <input type="hidden" name="comment_id" value="{{ comment.id }}">
+                                    <button type="submit" name="edit_comment">Editar</button>
+                                </form>
+
+                                <form method="post" style="display:inline;">
+                                    {% csrf_token %}
+                                    <input type="hidden" name="comment_id" value="{{ comment.id }}">
+                                    <button type="submit" name="delete_comment">Excluir</button>
+                                </form>
+                            </div>
+                        {% endif %}
+                    {% endif %}
+                </div>
+            {% empty %}
+                <p>Sem comentários ainda. Seja o primeiro a comentar!</p>
+            {% endfor %}
+        </div>
+
+        <!-- Formulário para adicionar novo comentário -->
+        <h2>Adicionar Comentário</h2>
+        {% if user.is_authenticated %}
+            <div class="{% if comment_to_edit %}hidden{% endif %}">
+                <form method="post">
+                    {% csrf_token %}
+                    {{ comment_form.as_p }}
+                    <button type="submit" name="new_comment">Enviar</button>
+                </form>
+            </div>
+        {% else %}
+            <p>Você precisa estar logado para comentar.</p>
+        {% endif %}
+    </div>
+    <br/>
+    {% include 'Base/footer.html' %}
 </body>
 </html>

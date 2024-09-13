@@ -1,0 +1,77 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard do Usuário</title>
+    <link rel="stylesheet" href="{% static 'css/dashboard.css' %}">
+</head>
+<body>
+    {% include '../Base/header.html' %}
+    <div class="container">
+        <div class="principal">
+            <!-- Se houver uma foto de perfil do usuário, ela será exibida aqui -->
+            <div class="foto-perfil">
+                {% if user.profile_picture %}
+                <img src="{{ user.profile_picture.url }}" alt="Foto de perfil" class="profile-pic">
+            {% else %}
+                <!-- Exibir um ícone ou imagem padrão caso o usuário não tenha uma foto -->
+                <i class="fa-solid fa-circle-user"></i>
+            {% endif %}
+            </div>
+            <div class="nickname"><strong>{{ user.username }}</strong></div>
+            <div class="email">{{ user.email }}</div>
+
+            <div class="menu_lateral">
+                <ul>
+                    <li><a href="{% url 'change_password' %}">Editar Perfil</a></li>
+                    <li><a href="#">Conquistas</a></li>
+                    <li><a href="#">Gerenciar pagamentos</a></li>
+                    <li><a href="#">Preferências</a></li>
+                    <li><a href="#">Segurança</a></li>
+                    {% if user.is_authenticated %}
+                        <li>
+                            <a href="{% url 'logout' %}">Sair da conta</a><!-- Link para a página de logout -->
+                        </li> 
+                    {% endif %}
+                    <li><a href="#">Sobre</a></li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="secundario">
+            <div class="titlesec">
+                <h1>Configurações de Conta</h1>
+            </div>
+            <div class="resumo">
+                <p>Gerencie aqui a sua conta.</p>
+            </div>
+            <div class="InfoConta">
+                <h2>Informações da Conta</h2>
+                <p><strong>ID da conta:</strong> {{ user.id }}</p>
+                <p><strong>Nome de exibição:</strong> {{ user.username }}</p>
+                <p><strong>Endereço de e-mail:</strong> {{ user.email }}</p>
+
+            </div>
+            <div class="DetalhesPessoais">
+                <h2>Detalhes Pessoais</h2>
+                <p><strong>Nome:</strong> {{ user.first_name }}</p>
+                <p><strong>Sobrenome:</strong> {{ user.last_name }}</p>
+                <p><strong>Telefone:</strong> {{ user.phone_number }}</p>
+            </div>
+            <div class="Endereco">
+                <h2>Endereço</h2>
+                <p><strong>Endereço:</strong> {{ user.address }}</p>
+                <p><strong>Cidade:</strong> {{ user.city }}</p>
+                <p><strong>Região:</strong> {{ user.region }}</p>
+                <p><strong>Rua:</strong> {{ user.street }}</p>
+                <p><strong>Número da Rua:</strong> {{ user.street_number }}</p>
+                <p><strong>Código Postal:</strong> {{ user.postal_code }}</p>
+            </div>
+        </div>
+    </div>
+
+    {% include '../Base/footer.html' %}
+</body>
+</html>

@@ -3,24 +3,29 @@
 <html>
 <head>
     <title>Lista de Jogos</title>
-    <link rel="stylesheet" href="{% static 'css/forma.css' %}">
+    <link rel="stylesheet" href="{% static 'css/list.css' %}">
 </head>
 <body>
+    {% include 'Base/header.html' %}
+    <br/>
     <h1>Lista de Jogos</h1>
     <ul>
         {% for game in games %}
             <li>
                 {% if game.image %}
-                    <img src="{{ game.image.url }}" alt="Imagem do Jogo" width="200">
+                    <img src="{{ game.image.url }}" alt="Imagem do Jogo">
                 {% endif %}
-                <h2><a href="{% url 'game_detail' game.pk %}">{{ game.name }}</a></h2>
-                <p>Categoria: {{ game.category }}</p>
-                <p>Preço: R$ {{ game.price }}</p>
-                <p>{{ game.description }}</p>
-                
+                <div class="game-info">
+                    <h2><a href="{% url 'game_detail' game.pk %}">{{ game.name }}</a></h2>
+                    <p>Categoria: {{ game.category }}</p>
+                    <p>Preço: R$ {{ game.price }}</p>
+                    <p>{{ game.description }}</p>
+                </div>
             </li>
         {% endfor %}
     </ul>
-    <a href="{% url 'home' %}">Home</a>
+
+    <br/>
+    {% include 'Base/footer.html' %}
 </body>
 </html>
