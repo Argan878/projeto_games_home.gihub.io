@@ -3,7 +3,7 @@
 <html>
 <head>
     <title>Home</title>
-    <link rel="stylesheet" href="{% static 'css/home.css' %}">
+    <link rel="stylesheet" href="{% static 'css/homee.css' %}">
 </head>
 <body>
     {% include 'Base/header.html' %}
@@ -33,13 +33,11 @@
             <a href=""><div class="img5"></div><div class="limite"><p class="animation-letras">Resident Evil 4</p></div></a>
         </div>
         </samp>
-    </section>
-    <h1 style="color: aliceblue;">Bem-vindo ao Home</h1>
-
-    <div class="Titulo_aba">
-        <h2>Jogos em Destaque >>></h2>
-    </div>
+    </section> 
     <ul>
+        <div class="Titulo_aba">
+        <h2>Jogos em Destaque >>></h2>
+        </div>
         <div class="jogoaleatorio">
             {% for game in games %}
             <div class="jogos">
@@ -52,7 +50,6 @@
             </div>
             {% endfor %}
         </div>
-        
     </ul>
 
     <br/>

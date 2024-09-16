@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Dashboard do Usuário</title>
-    <link rel="stylesheet" href="{% static 'css/dashboard.css' %}">
+    <link rel="stylesheet" href="{% static 'css/dashboar.css' %}">
 </head>
 <body>
     {% include '../Base/header.html' %}
@@ -17,7 +17,7 @@
                 <img src="{{ user.profile_picture.url }}" alt="Foto de perfil" class="profile-pic">
             {% else %}
                 <!-- Exibir um ícone ou imagem padrão caso o usuário não tenha uma foto -->
-                <i class="fa-solid fa-circle-user"></i>
+                <i style="font-size: 140px; color: rgb(255, 255, 255);" class="fa-solid fa-circle-user"></i>
             {% endif %}
             </div>
             <div class="nickname"><strong>{{ user.username }}</strong></div>
@@ -26,7 +26,7 @@
             <div class="menu_lateral">
                 <ul>
                     <li><a href="{% url 'change_password' %}">Editar Perfil</a></li>
-                    <li><a href="#">Conquistas</a></li>
+                    <li><a href="{% url 'favorite_games' %}">Favoritos</a></li>
                     <li><a href="#">Gerenciar pagamentos</a></li>
                     <li><a href="#">Preferências</a></li>
                     <li><a href="#">Segurança</a></li>

@@ -19,13 +19,17 @@
                 <p>Categoria: {{ game.category }}</p>
                 <p>Preço: R$ {{ game.price }}</p>
                 <a href="#" class="button">Comprar</a>
+                {% if game.pk in request.session.favorites %}
+                    <a href="{% url 'toggle_favorite' game.pk %}" class="home-button">Desfavoritar</a>
+                {% else %}
+                    <a href="{% url 'toggle_favorite' game.pk %}" class="home-button">Favoritar</a>
+                {% endif %}
             </div>
         </div>
+        
         <div class="descri">
             <p>{{ game.description }}</p>
         </div>
-        <!-- Link para a home -->
-        <a href="{% url 'home' %}" class="home-button">Home</a>
 
         <!-- Seção de Comentários -->
         <h2>Comentários</h2>

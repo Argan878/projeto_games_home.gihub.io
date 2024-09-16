@@ -17,12 +17,12 @@ h1 {
     color: #1db954; /* Verde */
 }
 
-ul {
+.favorit {
     list-style: none;
     padding: 0;
 }
 
-li {
+.favorit li {
     background: rgb(55, 55, 55);
     margin: 20px auto;
     padding: 20px;
@@ -34,17 +34,17 @@ li {
     gap: 20px;
 }
 
-li img {
+.favorit li img {
     max-width: 200px;
     border-radius: 8px;
 }
 
-li h2 {
+.favorit li h2 {
     font-size: 1.5em;
     color: #1db954; /* Verde */
 }
 
-li p {
+.favorit li p {
     margin-bottom: 10px;
 }
 
@@ -53,7 +53,18 @@ a {
     text-decoration: none;
 }
 
-a:hover {
-    text-decoration: underline;
+.home-button {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #1db954; /* Verde */
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+    font-size: 1em;
+    margin-top: 10px;
+    margin-right: 10px; /* Espaço entre os botões */
 }
 
+.home-button:hover {
+    background-color: #1ed760; /* Verde mais claro */
+}

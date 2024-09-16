@@ -1,0 +1,38 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Meus Jogos Favoritos</title>
+    <link rel="stylesheet" href="{% static 'css/favorit.css' %}">
+</head>
+<body>
+    <!-- Inclui o cabeçalho -->
+    {% include 'Base/header.html' %}
+    
+    <h1>Jogos Favoritos</h1>
+
+    <ul class="favorit">
+        {% for game in favorite_games %}
+            <li>
+                {% if game.image %}
+                    <img src="{{ game.image.url }}" alt="Imagem do Jogo">
+                {% endif %}
+                <div class="game-info">
+                    <h2><a href="{% url 'game_detail' game.pk %}">{{ game.name }}</a></h2>
+                    <p>Categoria: {{ game.category }}</p>
+                    <p>Preço: R$ {{ game.price }}</p>
+                    <!-- Link para remover dos favoritos -->
+                    <a href="{% url 'toggle_favorite' game.pk %}" class="home-button">Remover dos Favoritos</a>
+                </div>
+            </li>
+        {% empty %}
+            <p>Você ainda não tem jogos favoritos.</p>
+        {% endfor %}
+    </ul>
+
+    <!-- Inclui o rodapé -->
+    {% include 'Base/footer.html' %}
+</body>
+</html>

@@ -1,3 +1,4 @@
+from http.client import HTTPResponse
 from django.shortcuts import render, redirect, get_object_or_404
 from django.contrib.auth import authenticate, login, logout, update_session_auth_hash
 from django.contrib.auth.forms import AuthenticationForm
@@ -6,6 +7,7 @@ from .forms import CommentForm,CustomUserCreationForm, CustomUserChangeForm  # C
 from .models import Game, Comment
 from django.http import HttpResponseForbidden
 from django.contrib.auth.decorators import login_required
+from .forms import SearchForm
 
 @login_required
 def change_password(request):
@@ -51,6 +53,9 @@ def game_detail(request, pk):
     comments = game.comments.all()
     comment_form = CommentForm()
 
+    # Salvar o ID do jogo na sessão
+    request.session['game_id'] = game.pk
+
     # Variável para identificar se o usuário está editando um comentário
     comment_to_edit = None
 
@@ -91,7 +96,34 @@ def game_detail(request, pk):
         'comment_to_edit': comment_to_edit
     })
 
-    
+def toggle_favorite(request, game_id):
+    # Busca o jogo pelo ID
+    game = get_object_or_404(Game, pk=game_id)
+
+    # Pega a lista de favoritos da sessão (ou cria uma lista vazia se não existir)
+    favorites = request.session.get('favorites', [])
+
+    if game_id in favorites:
+        # Se o jogo já está nos favoritos, remove-o
+        favorites.remove(game_id)
+    else:
+        # Caso contrário, adiciona o jogo aos favoritos
+        favorites.append(game_id)
+
+    # Atualiza a sessão com a nova lista de favoritos
+    request.session['favorites'] = favorites
+
+    # Redireciona de volta para a página de detalhes do jogo (ou outra página)
+    return redirect('game_detail', pk=game_id)
+
+def favorite_games(request):
+    # Pega a lista de IDs de favoritos da sessão
+    favorite_ids = request.session.get('favorites', [])
+
+    # Busca os jogos correspondentes a esses IDs
+    favorite_games = Game.objects.filter(id__in=favorite_ids)
+
+    return render(request, 'User/favorite_games.html', {'favorite_games': favorite_games})
 
 def logout_view(request):
     logout(request)
@@ -141,3 +173,21 @@ def login_view(request):
     
     # Renderiza a página de login com o formulário
     return render(request, 'User/login.html', {'form': form})
+
+def search_view(request):
+    form = SearchForm()
+    results = []
+    query = ''
+
+    if 'query' in request.GET:
+        form = SearchForm(request.GET)
+        if form.is_valid():
+            query = form.cleaned_data['query']
+            results = Game.objects.filter(name__icontains=query)  # Filtra jogos pelo nome
+
+    context = {
+        'form': form,
+        'results': results,
+        'query': query,
+    }
+    return render(request, 'resu_busca.html', context)

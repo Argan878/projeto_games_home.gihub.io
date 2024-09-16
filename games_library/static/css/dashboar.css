@@ -28,7 +28,7 @@ body {
 }
 
 /* Ajuste para a imagem do perfil */
-.profile-pic {
+.principal .profile-pic {
     width: 150px;  /* Largura da imagem */
     height: 150px;  /* Altura da imagem */
     border-radius: 50%;  /* Torna a imagem circular */
@@ -37,7 +37,7 @@ body {
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);  /* Sombra para dar um efeito de elevação */
 }
 
-.profile-picture-preview {
+.principal .profile-picture-preview {
     max-width: 150px;
     max-height: 150px;
     border-radius: 50%;

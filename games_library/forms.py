@@ -88,3 +88,7 @@ class CustomUserCreationForm(UserCreationForm):
         if CustomUser.objects.filter(email=email).exists():
             raise ValidationError("Este e-mail já está em uso.")
         return email
+
+
+class SearchForm(forms.Form):
+    query = forms.CharField(label='Buscar', max_length=100)

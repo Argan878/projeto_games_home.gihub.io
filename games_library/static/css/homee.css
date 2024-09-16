@@ -329,7 +329,7 @@ a{
     }
 
     .Titulo_aba:hover{
-        background-color: red;
+        background-color: #1db954;
         transition: 0.6s;
         cursor: pointer;
         border-radius: 25px;
@@ -338,11 +338,12 @@ a{
 
     
     .jogoaleatorio {
-        display: flex;
-        overflow-x: auto;
-        scroll-snap-type: x mandatory;
+        display: grid;
+        grid-template-columns: repeat(4, 1fr); /* 4 colunas, uma para cada jogo */
+        gap: 20px; /* Espaço entre os jogos */
         margin-top: 10px;
         justify-content: center;
+        padding: 10px;
     }
 
     h3 {
@@ -350,17 +351,16 @@ a{
         margin: 10px 0;
     }
     .jogos {
+        border-radius: 8px;
+        background: rgb(55, 55, 55);
+        margin: 20px auto;
+        padding: 20px;
+        border-radius: 8px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
         flex: 0 0 auto;
         margin-right: 35px;
         scroll-snap-align: start;
-        cursor: pointer;
         text-align: center; 
-    }
-
-    .jogos:hover {
-        background-color: rgba(204, 187, 187, 0.308);
-        transition: 0.6s;
-        cursor: pointer;
     }
 
     
@@ -383,12 +383,13 @@ a{
         background-color: rgb(80, 78, 78);
         border-radius: 20px;
         display: inline-block;
+        cursor: pointer;
         padding: 5px;
     }
 
     .Comprar{
         color: rgb(255, 255, 255);
-        background-color: rgb(255, 0, 0);
+        background-color: #1db954;
         transition: 0.8s;
         cursor: pointer;
         border-radius: 20px;
@@ -512,22 +513,23 @@ a{
         margin-left: 16px;
         justify-content: flex-start; /* Ajuste para garantir que o conteúdo comece no início */
         padding-bottom: 16px; /* Adicionando um espaço para o scrollbar quando necessário */
+        padding: 10px;
     }
     
     .jogos {
-        
+        border-radius: 8px;
+        background: rgb(55, 55, 55);
+        margin: 20px auto;
+        padding: 20px;
+        border-radius: 8px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
         flex: 0 0 auto;
         margin-right: 35px;
         scroll-snap-align: start;
-        cursor: pointer;
         text-align: center; 
+        
     }
 
-    .jogos:hover {
-        background-color: rgba(204, 187, 187, 0.308);
-        transition: 0.6s;
-        cursor: pointer;
-    }
     .Titulo_aba{
         font-family: monospace;
         margin-top: 70px;
@@ -537,7 +539,7 @@ a{
     }
 
     .Titulo_aba:hover{
-        background-color: red;
+        background-color: #1db954;
         transition: 0.6s;
         cursor: pointer;
         border-radius: 25px;
@@ -555,7 +557,7 @@ a{
 
     .Comprar{
         color: rgb(255, 255, 255);
-        background-color: rgb(255, 0, 0);
+        background-color: #1db954;
         transition: 0.8s;
         cursor: pointer;
         border-radius: 20px;
